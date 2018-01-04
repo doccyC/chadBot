@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log("Let's go chowder some native chicks down that trail of beers!");
 });
 
-client.User.setGame('the game, bro');
+bot.user.setStatus('the game, bro');
 
 client.on('message', message => {
     if (message.content === '>>suhbrah') {

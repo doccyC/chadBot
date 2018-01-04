@@ -1,22 +1,18 @@
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(logger.transports.Console, {
-    colorize: true
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
 });
-logger.level = 'debug';
-// Initialize Discord Bot
-var chadbot = new Discord.Client({
-   token: auth.token,
-   autorun: true
+
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.reply('pong');
+  	}
 });
-chadbot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(chadbot.username + ' - (' + chadbot.id + ')');
-});
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
 chadbot.on('message', function (user, userID, channelID, message, evt) {
 // >> is the prefix
     if (message.substring(0, 2) == '>>') {

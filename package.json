@@ -1,11 +1,13 @@
 {
-  "name": "Chad-Bot",
+  "name": "ChadBot",
+  "description": "A truly choice bot for Discord.",
   "version": "1.0.0",
-  "description": "A truly choice Discord bot.",
   "main": "chadbot.js",
-  "author": "doccyC",
+  "scripts": {
+    "start": "node chadbot.js"
+  },
   "dependencies": {
-    "discord.js": "^11.2.1",
-    "node-opus": "^0.2.7"
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
   }
 }

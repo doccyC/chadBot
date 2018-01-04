@@ -6,28 +6,10 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
+    if (message.content === '>>suhbrah') {
+    	message.reply('```Suh```');
   	}
 });
 
-// THIS  MUST  BE  THIS  WAY
+// no change, bro
 client.login(process.env.BOT_TOKEN);
-chadbot.on('message', function (user, userID, channelID, message, evt) {
-// >> is the prefix
-    if (message.substring(0, 2) == '>>') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-
-        args = args.splice(1);
-        switch(cmd) {
-            case 'suhbrah':
-                chadbot.sendMessage({
-                    to: channelID,
-                    message: 'Suh'
-                });
-            break;
-            //continuation of case commands from here on out
-         }
-     }
-});
